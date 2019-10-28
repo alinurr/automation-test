@@ -17,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/assertTitle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="67" column="74" lean-forward="true" selection-start-line="67" selection-start-column="74" selection-end-line="67" selection-end-column="74" />
+            <state relative-caret-position="634">
+              <caret line="89" column="28" lean-forward="true" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -60,7 +60,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -77,7 +77,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -130,15 +130,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="assertTitle_testAssertTitle - 2019.10.08 at 15h 02m 44s.xml">
-      <configuration name="assertTitle.testAssertTitle" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="assertTitle_testAssertTitle - 2019.10.15 at 11h 59m 15s.xml">
-      <configuration name="assertTitle.testAssertTitle" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="assertTitle_testAssertTitle - 2019.10.15 at 12h 01m 45s.xml">
-      <configuration name="assertTitle.testAssertTitle" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="assertTitle_testAssertTitle - 2019.10.15 at 15h 13m 37s.xml">
       <configuration name="assertTitle.testAssertTitle" configurationId="JUnit" />
     </history-entry>
@@ -160,12 +151,21 @@
     <history-entry file="assertTitle_testAssertTitle - 2019.10.15 at 16h 27m 00s.xml">
       <configuration name="assertTitle.testAssertTitle" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="assertTitle_testAssertTitle - 2019.10.24 at 14h 28m 12s.xml">
+      <configuration name="assertTitle.testAssertTitle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="assertTitle_testAssertTitle - 2019.10.24 at 14h 34m 14s.xml">
+      <configuration name="assertTitle.testAssertTitle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="assertTitle_testAssertTitle - 2019.10.28 at 15h 41m 29s.xml">
+      <configuration name="assertTitle.testAssertTitle" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18123667" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18710022" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -203,8 +203,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assertTitle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="67" column="74" lean-forward="true" selection-start-line="67" selection-start-column="74" selection-end-line="67" selection-end-column="74" />
+        <state relative-caret-position="634">
+          <caret line="89" column="28" lean-forward="true" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

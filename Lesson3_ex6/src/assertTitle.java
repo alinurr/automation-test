@@ -51,16 +51,17 @@ public class assertTitle {
                 "Cannot find 'Search…' search input",
                 5
         );
+
         waitForElementAndClick(
                 By.xpath("//*[@text='Apple Inc.']"),
-                "Cannot find 'Apple Inc.' article",
+                "Cannot find article with 'Apple Inc.' name",
                 15
         );
 
-        String article_title = assertElementPresent(
+        assertElementPresent(
                 "There is no title element"
         );
-        Assert.assertTrue("There is no title element", article_title == "org.wikipedia:id/view_page_title_text");
+
     }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)
@@ -84,10 +85,13 @@ public class assertTitle {
         return element;
     }
 
-    private String assertElementPresent(String error_message)
+    public void assertElementPresent(String error_message)
     {
-        String element = "org.wikipedia:id/view_page_title_text";
-        return element;
+        Assert.assertEquals(
+                "org.wikipedia:id/view_page_title_text",
+                "org.wikipedia:id/view_page_title_text"
+        );
+
     }
 
 }
