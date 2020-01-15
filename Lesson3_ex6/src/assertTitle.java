@@ -14,7 +14,6 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
 public class assertTitle {
     private AppiumDriver driver;
-
     @Before
     public void setUp() throws Exception {
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -59,7 +58,9 @@ public class assertTitle {
         );
 
         assertElementPresent(
-                "There is no title element"
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "There is no element with title",
+                0
         );
 
     }
@@ -85,13 +86,9 @@ public class assertTitle {
         return element;
     }
 
-    public void assertElementPresent(String error_message)
+    public void assertElementPresent(By by, String error_message, long timeoutInSeconds)
     {
-        Assert.assertEquals(
-                "org.wikipedia:id/view_page_title_text",
-                "org.wikipedia:id/view_page_title_text"
-        );
-
+        WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
+        Assert.assertTrue("Element is not displayed", element.isDisplayed());
     }
-
 }
