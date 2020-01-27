@@ -10,7 +10,13 @@ public class SearchPageObject extends MainPageObject {
             SEARCH_INIT_ELEMENT = "org.wikipedia:id/search_container",
             SEARCH_INPUT = "//*[contains(@text,'Search…')]",
             SEARCH_RESULT = "org.wikipedia:id/search_results_list",
-            SEARCH_CANCEL_BUTTON = "org.wikipedia:id/search_close_btn";
+            SEARCH_CANCEL_BUTTON = "org.wikipedia:id/search_close_btn",
+            SEARCH_RESULT_BY_SUBSTRING_TPL = "//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='{SUBSTRING}']";
+
+    private static String getResultSearchElement(String substring)
+    {
+        return SEARCH_RESULT_BY_SUBSTRING_TPL.replace("{SUBSTRING}", substring);
+    }
 
     public void initSearchInput()
     {
@@ -35,10 +41,14 @@ public class SearchPageObject extends MainPageObject {
     public void waitForSearchResultToDisappear()
     {
         this.waitForElementNotPresent(
-                By.id("org.wikipedia:id/search_results_list"), "Search result is on screen", 8);
+                By.id(SEARCH_RESULT), "Search result is on screen", 8);
     }
 
-
+    public void clickByArticleWithSubstring(String substring)
+    {
+        String search_result_xpath = getResultSearchElement(substring);
+        waitForElementAndClick(By.xpath(search_result_xpath),"Cannot find article with podtitle " + substring, 5);
+    }
 
 
 

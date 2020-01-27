@@ -18,11 +18,11 @@ public class CoreTestCase extends TestCase {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName","Android");
         capabilities.setCapability("deviceName","AndroidTestDevice");
-        capabilities.setCapability("platformVersion","7.0");
+        capabilities.setCapability("platformVersion","8.0");
         capabilities.setCapability("automationName","Appium");
         capabilities.setCapability("appPackage","org.wikipedia");
         capabilities.setCapability("appActivity",".main.MainActivity");
-        capabilities.setCapability("app","C:\\Users\\raiymbekova_42499\\Desktop\\CourseAutomation\\JavaAppiumAutomation\\apks\\org.wikipedia.apk");
+        capabilities.setCapability("app","C:\\Users\\raiymbekova_42499\\Documents\\GitHub\\automation-test\\Lesson4_ex8\\apks\\org.wikipedia.apk");
 
         driver = new AndroidDriver(new URL(AppiumURL), capabilities);
 
