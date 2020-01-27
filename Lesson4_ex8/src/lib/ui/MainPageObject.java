@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static junit.framework.TestCase.assertTrue;
+
 public class MainPageObject {
     protected AppiumDriver driver;
 
@@ -76,5 +78,11 @@ public class MainPageObject {
                 .moveTo(left_x, middle_y)
                 .release()
                 .perform();
+    }
+
+    public void assertElementPresent(By by, String error_message, long timeoutInSeconds)
+    {
+        WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
+        assertTrue("Element is not displayed", element.isDisplayed());
     }
 }

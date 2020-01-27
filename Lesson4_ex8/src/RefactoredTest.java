@@ -65,31 +65,14 @@ public class RefactoredTest extends CoreTestCase {
     @Test
     public void testAssertTitle()
     {
-        waitForElementAndClick(
-                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
-                "Cannot find 'Search Wikipedia' search input",
-                5
-        );
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject.initSearchInput();
+        String search_line = "apple";
+        SearchPageObject.typeSearchLine(search_line);
 
-        waitForElementAndSendKeys(
-                By.xpath("//*[contains(@text,'Search…')]"),
-                "apple",
-                "Cannot find 'Search…' search input",
-                5
-        );
-
-        waitForElementAndClick(
-                By.xpath("//*[@text='Apple Inc.']"),
-                "Cannot find article with 'Apple Inc.' name",
-                15
-        );
-
-        assertElementPresent(
-                By.id("org.wikipedia:id/view_page_title_text"),
-                "There is no element with title",
-                0
-        );
-
+        ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
+        ArticlePageObject.openArticleByName();
+        ArticlePageObject.assertTitlePresent();
     }
 
 }

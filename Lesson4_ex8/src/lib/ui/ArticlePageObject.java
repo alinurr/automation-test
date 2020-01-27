@@ -15,7 +15,8 @@ public class ArticlePageObject extends MainPageObject {
             MYLIST_NAME_INPUT = "org.wikipedia:id/text_input",
             MYLIST_OK_BUTTON = "//*[@text='OK']",
             CLOSE_ARTICLE_BUTTON = "//android.widget.ImageButton[@content-desc='Navigate up']",
-            OPTION_EXISTED_FOLDER = "//*[@text='{SUBSTRING}']";
+            OPTION_EXISTED_FOLDER = "//*[@text='{SUBSTRING}']",
+            ARTICLE_TITLE = "//*[@text='Apple Inc.']";
 
     private static String getFolderName(String substring)
     {
@@ -91,5 +92,23 @@ public class ArticlePageObject extends MainPageObject {
         );
         String existed_folder = getFolderName(substring);
         waitForElementAndClick(By.xpath(existed_folder), "Cannot find created folder",7);
+    }
+
+    public void openArticleByName()
+    {
+        this.waitForElementAndClick(
+                By.xpath(ARTICLE_TITLE),
+                "Cannot find article with 'Apple Inc.' name",
+                15
+        );
+    }
+
+    public void assertTitlePresent()
+    {
+        this.assertElementPresent(
+                By.id(TITLE),
+                "There is no element with title",
+                0
+        );
     }
 }
