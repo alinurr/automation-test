@@ -3,11 +3,14 @@ package lib.ui;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import lib.Platform;
+import org.openqa.selenium.WebElement;
 
 abstract public class MyListsPageObject extends MainPageObject{
     protected static String
         FOLDER_BY_NAME_TPL,
-        ARTICLE_BY_TITLE_TPL;
+        ARTICLE_BY_TITLE_TPL,
+        SAVED_ARTICLE,
+            ARTICLE_DESC;
 
     private static String getFolderXpathByName(String name_of_folder)
     {
@@ -46,8 +49,7 @@ abstract public class MyListsPageObject extends MainPageObject{
         this.waitForElementNotPresent(article_xpath, "Saved article still present with title " + article_title,15);
     }
 
-    public void swipeByArticleToDelete(String article_title)
-    {
+    public void swipeByArticleToDelete(String article_title){
         this.waitForArticleAppearByTitle(article_title);
         String article_xpath = getSavedArticleIdByTitle(article_title);
         this.swipeElementToLeft(
@@ -62,13 +64,18 @@ abstract public class MyListsPageObject extends MainPageObject{
         this.waitForArticleDisappearByTitle(article_title);
     }
 
-    public void clickSavedArticle(String article_title)
+    public void clickSavedArticle()
     {
-        String article_xpath = getSavedArticleIdByTitle(article_title);
-        this.waitForElementAndClick(
-                article_xpath,
+         this.waitForElementAndClick(
+                SAVED_ARTICLE,
                 "Cannot find second article after deleting first one",
-                5
-        );
+                10);
+
+    }
+
+    public String getBoldDescOfSavedArticle()
+    {
+        WebElement element = this.waitForElementPresent(ARTICLE_DESC, "Cannot find bold desc of article", 10);
+        return element.getAttribute("name");
     }
 }

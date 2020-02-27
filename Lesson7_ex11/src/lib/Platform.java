@@ -65,9 +65,9 @@ public class Platform {
     {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName","iOS");
-        capabilities.setCapability("deviceName","iPhone SE");
-        capabilities.setCapability("platformVersion","11.2");
-        capabilities.setCapability("app","/Users/alinur/automation-test/Lesson5_ex10/apks/Wikipedia.app");
+        capabilities.setCapability("deviceName","iPhone 8 Plus");
+        capabilities.setCapability("platformVersion","13.3");
+        capabilities.setCapability("app","/Users/alinur/automation-test/Lesson7_ex11/apks/Wikipedia.app");
         return capabilities;
     }
 

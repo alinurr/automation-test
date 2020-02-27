@@ -17,4 +17,5 @@ public class AndroidArticlePageObject extends ArticlePageObject
     }
 
     public AndroidArticlePageObject(AppiumDriver driver){super(driver);}
+
 }

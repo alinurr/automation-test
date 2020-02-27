@@ -22,10 +22,10 @@ abstract public class ArticlePageObject extends MainPageObject{
 
     public WebElement waitForElementTitle()
     {
-        return this.waitForElementPresent(TITLE, "Cannot find article title on page!", 15);
+        return this.waitForElementPresent(TITLE, "Cannot find article title on page!", 20);
     }
 
-    private static String getArticleTitleById(String article_title)
+    private static String getArticleTitleByXpath(String article_title)
     {
         return TITLE.replace("{TITLE}", article_title);
 
@@ -33,7 +33,7 @@ abstract public class ArticlePageObject extends MainPageObject{
 
     public void waitForArticleAppearByTitle(String article_title)
     {
-        String article_id = getArticleTitleById(article_title);
+        String article_id = getArticleTitleByXpath(article_title);
         this.waitForElementPresent(article_id, "Cannot find article by title " + article_title, 10);
     }
 

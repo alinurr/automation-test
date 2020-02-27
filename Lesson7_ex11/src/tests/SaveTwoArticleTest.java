@@ -45,14 +45,14 @@ public class SaveTwoArticleTest extends CoreTestCase {
 
         //save second article to my list
         SearchPageObject.initSearchInput();
-        SearchPageObject.typeSearchLine(search_line);
-        SearchPageObject.clickByArticleWithSubstring("Syntax of the Python programming language");
+        //SearchPageObject.typeSearchLine(search_line);
+        SearchPageObject.clickByArticleWithSubstring("Species of snake");
 
         if (Platform.getInstance().isAndroid()){
             ArticlePageObject.waitForElementTitle();
             ArticlePageObject.getArticleTitle();
         }else {
-            ArticlePageObject.waitForArticleAppearByTitle("Python syntax and semantics");
+            ArticlePageObject.waitForArticleAppearByTitle("Python molurus");
         }
 
         if (Platform.getInstance().isAndroid()){
@@ -71,15 +71,15 @@ public class SaveTwoArticleTest extends CoreTestCase {
         if (Platform.getInstance().isAndroid()){
             MyListsPageObject.openFolderByName(name_of_folder);
         }
-        MyListsPageObject.swipeByArticleToDelete("Wikimedia disambiguation page");
+        MyListsPageObject.swipeByArticleToDelete("Python Disambiguation page providing links to topics that could be referred to by the same search term");
 
 
-        MyListsPageObject.clickSavedArticle("Python syntax and semantics Syntax of the Python programming language");;
-        String article_title = ArticlePageObject.getArticleTitle();
+        MyListsPageObject.clickSavedArticle();;
+        String article_desc = MyListsPageObject.getBoldDescOfSavedArticle();
         assertEquals(
                 "We see unexpected title",
-                "Python syntax and semantics",
-                article_title
+                "Python molurus",
+                article_desc
         );
     }
 }
